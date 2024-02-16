@@ -94,6 +94,33 @@
                 <a href="https://devanaoy.github.io/Project1/waph.html">Click here to view waph.html</a>
                 <p id="email" onclick="showhideEmail()">Show my email</p>
                 <div id="digit-clock"></div>
+                  <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+    <script src="https://waph-uc.github.io/clock.js"></script>
+    <script>
+        var canvas = document.getElementById("analog-clock");
+
+        var ctx = canvas.getContext("2d");
+
+        var radius = canvas.height / 2;
+
+        ctx.translate(radius, radius);
+        radius = radius * 0.9;
+
+        setInterval(drawClock, 1000);
+        function drawClock() {
+            drawFace(ctx, radius);
+
+            drawNumbers(ctx, radius);
+
+            drawTime(ctx, radius);
+        }
+            </script>
+    <script>
+    function displayTime() {
+        document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+    }
+    setInterval(displayTime, 500);
+    </script>
             </div>
         </div>
 
@@ -144,7 +171,7 @@
         alt="Flag Counter" border="0"></a>
         </div>
     </div>
-    <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+<!--     <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
     <script src="https://waph-uc.github.io/clock.js"></script>
     <script>
         var canvas = document.getElementById("analog-clock");
@@ -170,7 +197,7 @@
         document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
     }
     setInterval(displayTime, 500);
-    </script>
+    </script> -->
     <script>
         var shown = false;
 
