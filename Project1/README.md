@@ -1,38 +1,41 @@
+# waph-devanaoy
+
 # WAPH-Web Application Programming and Hacking
 
 ## Instructor: Dr. Phu Phung
 
-**Name**: Divya Sheelam
+## Student
 
-**Email**: devanaoy@mail.uc.edu
+**Name**: Omprakashreddy Devanampalli
 
-**Short-bio**: Divya pursuing masters in Information Technology at University of Cincinnati. Divya is interested in software development and machine learning.  
+**Email**: devanaoy@ucmail.uc.edu
 
-![Divya Sheelam](images/headshot.jpeg)
+**Short-bio**: Omprakashreddy Devanampalli has keen interest in ethical hacking and secure software development. 
+
+![Omprakash's headshot](Project1/headshot.jpeg)
 
 ## Repository Information
 
-Respository's URL: [git@github.com:sheelada/waph-sheelada.git](git@github.com:sheelada/waph-sheelada.git)
+Respository's URL: [git@github.com:devanaoy/waph-devanaoy.git](git@github.com:devanaoy/waph-devanaoy.git)
 
-This is a private repository for Divya Sheelam to store all code from the course. The organization of this repository is as follows.
+This is a private repository for Omprakashreddy Devanampalli to store all code from the course. The organization of this repository is as follows.
 
 # Individual Project 1 – Front-end Web Development with a Professional Profile Website on github.io cloud service
 
 ## Overview and Requirements 
 
-For the Individual Project 1, I developed a professional profile website and deployed it on GitHub Pages. The website serves as a showcase of my resume, skills, and experiences, while also incorporating various technical functionalities like integrating joke API, digital clock, analog clock, show my email id, weather API and Flag counter. The main objectives of this project were to enhance my front-end web development skills and gain practical experience in deploying websites using GitHub Pages.
+For my Individual Project 1, I crafted a professional website hosted on GitHub Pages, serving as a dynamic portfolio showcasing my resume, skills, and experiences. This project aimed to elevate my proficiency in front-end web development, and it involved implementing various technical features like integrating a joke API, digital clock, analog clock, displaying email, weather API, and a Flag counter. The deployment on GitHub Pages provided practical insights into the process of making web content publicly accessible.
 
-The link to access my website is: [https://sheelada.github.io/index.html](https://sheelada.github.io/index.html).
+The link to access my website is: [https://devanaoy.github.io/Project1/index.html](https://devanaoy.github.io/Project1/index.html).
 
-The link to access Individual Project-1 is: [https://github.com/sheelada/sheelada.github.io](https://github.com/sheelada/sheelada.github.io).
+The link to access Individual Project-1 is: [https://github.com/sheelada/devanaoy.github.io](https://github.com/devanaoy/devanaoy.github.io)
 
 ## General Requirements
 
 ### Personal Website on Github.io
 
-I created a new public repository with the name `sheelada.github.io`. Created a personal website on GitHub Pages featuring my resume, contact information, education, experiences, projects, certifications and skills.
-
-The link to access my website is: [https://sheelada.github.io/index.html](https://sheelada.github.io/index.html).
+I established a fresh public repository titled `devanaoy.github.io` and designed a personal website using GitHub Pages. The website encompasses details about my resume, contact information, education, experiences, projects, certifications, and skills.
+The link to access my website is: [https://devanaoy.github.io/Project1/index.html](https://devanaoy.github.io/Project1/index.html).
 
 ![Portfolio Website](images/screenshot1.png)
 
