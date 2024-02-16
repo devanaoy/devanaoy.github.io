@@ -97,6 +97,20 @@
                 <p>Phone: (513) 259-5878</p>
                 <a href="https://devanaoy.github.io/Project1/waph.html">Click here to view waph.html</a>
                 <p id="email" onclick="showhideEmail()">Show my email</p>
+                <div id="response"></div>
+    <script>
+        $(document).ready(function () {
+            $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
+                console.log("From jokeAPI: " + JSON.stringify(result));
+                $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
+            });
+        });
+
+        function encodeInput(input) {
+            // You can add your own encoding logic here if needed
+            return input;
+        }
+    </script>
                 <div id="digit-clock"></div>
                   <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
     <script src="https://waph-uc.github.io/clock.js"></script>
@@ -132,22 +146,7 @@
                         $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
                     })
                 </script>
-                <div id="response"></div>
-
-    <script>
-        $(document).ready(function () {
-            $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
-                console.log("From jokeAPI: " + JSON.stringify(result));
-                $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
-            });
-        });
-
-        function encodeInput(input) {
-            // You can add your own encoding logic here if needed
-            return input;
-        }
-    </script>
-            </div>
+                 </div>
         </div>
 
         <!-- Education -->
