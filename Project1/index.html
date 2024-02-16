@@ -11,10 +11,6 @@
     <title>Programming Joke</title>
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Images</title>
-    <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -114,36 +110,6 @@
             // You can add your own encoding logic here if needed
             return input;
         }
-   <h1>Random Images</h1>
-
-    <div id="imageContainer"></div>
-
-    <script>
-        $(document).ready(function () {
-            // Fetch random images from Lorem Picsum API
-            $.get("https://picsum.photos/v2/list?page=1&limit=5", function (result) {
-                console.log("From Lorem Picsum API: " + JSON.stringify(result));
-
-                // Display images
-                const imageContainer = $("#imageContainer");
-
-                // Create image elements and append them to the container
-                result.forEach(function (image) {
-                    const imgElement = $("<img>").attr("src", image.download_url).addClass("random-image");
-                    imageContainer.append(imgElement);
-                });
-            });
-        });
-    </script>
-
-    <style>
-        /* Add some styling to the images */
-        .random-image {
-            width: 200px;
-            height: auto;
-            margin: 10px;
-        }
-    </style>
                 <div id="digit-clock"></div>
                   <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
     <script src="https://waph-uc.github.io/clock.js"></script>
