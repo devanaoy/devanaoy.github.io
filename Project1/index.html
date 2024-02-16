@@ -12,7 +12,7 @@
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Dog Images</title>
+    <title>Random Images</title>
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- Bootstrap CSS -->
@@ -114,37 +114,31 @@
             // You can add your own encoding logic here if needed
             return input;
         }
-    </script>
-                <h1>Random Dog Images</h1>
+   <h1>Random Images</h1>
 
-    <div id="dogImages"></div>
+    <div id="imageContainer"></div>
 
     <script>
         $(document).ready(function () {
-            // Fetch random dog images from Dog API
-            $.get("https://dog.ceo/api/breeds/image/random/5", function (result) {
-                console.log("From Dog API: " + JSON.stringify(result));
-                
-                // Display dog images
-                if (result.status === "success") {
-                    const dogImages = result.message;
-                    const dogImagesContainer = $("#dogImages");
+            // Fetch random images from Lorem Picsum API
+            $.get("https://picsum.photos/v2/list?page=1&limit=5", function (result) {
+                console.log("From Lorem Picsum API: " + JSON.stringify(result));
 
-                    // Create image elements and append them to the container
-                    dogImages.forEach(function (imageUrl) {
-                        const imgElement = $("<img>").attr("src", imageUrl).addClass("dog-image");
-                        dogImagesContainer.append(imgElement);
-                    });
-                } else {
-                    console.error("Error fetching dog images");
-                }
+                // Display images
+                const imageContainer = $("#imageContainer");
+
+                // Create image elements and append them to the container
+                result.forEach(function (image) {
+                    const imgElement = $("<img>").attr("src", image.download_url).addClass("random-image");
+                    imageContainer.append(imgElement);
+                });
             });
         });
     </script>
 
     <style>
         /* Add some styling to the images */
-        .dog-image {
+        .random-image {
             width: 200px;
             height: auto;
             margin: 10px;
