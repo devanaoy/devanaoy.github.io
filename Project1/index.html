@@ -11,8 +11,6 @@
     <title>Programming Joke</title>
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -264,47 +262,6 @@
             );
         });
     </script>
-    <div id="welcomeMessage"></div>
-
-<script>
-    // Function to set a cookie
-    function setCookie(name, value, days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    }
-
-    // Function to get a cookie value by name
-    function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-    }
-
-    // Function to check and display the welcome message
-    function checkFirstVisit() {
-        var hasVisited = getCookie("firstVisit");
-
-        if (hasVisited === null) {
-            // Display the welcome message
-            document.getElementById("welcomeMessage").innerHTML = "Welcome to my homepage!";
-            // Set a cookie to mark the first visit
-            setCookie("firstVisit", "true", 365); // Cookie lasts for 1 year
-        }
-    }
-
-    // Check for the first visit and display the message
-    checkFirstVisit();
-</script>
     <div class="weather">
 <p>weather details</p>
 <div id="weather-info">
