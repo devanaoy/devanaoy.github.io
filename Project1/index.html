@@ -264,7 +264,9 @@
             );
         });
     </script>
-    <script>
+    <div id="welcomeMessage"></div>
+
+<script>
     // Function to set a cookie
     function setCookie(name, value, days) {
         var expires = "";
@@ -293,7 +295,8 @@
         var hasVisited = getCookie("firstVisit");
 
         if (hasVisited === null) {
-            alert("Welcome to my homepage!");
+            // Display the welcome message
+            document.getElementById("welcomeMessage").innerHTML = "Welcome to my homepage!";
             // Set a cookie to mark the first visit
             setCookie("firstVisit", "true", 365); // Cookie lasts for 1 year
         }
