@@ -176,6 +176,54 @@
             }
         }
     </script>
+    
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Button</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #interactive-button {
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="interactive-button">Click Me</button>
+
+    <script>
+        $(document).ready(function () {
+            $('#interactive-button').click(function () {
+                alert('Button clicked!');
+            });
+
+            // Change button color on hover
+            $('#interactive-button').hover(
+                function () {
+                    $(this).css('background-color', '#2980b9');
+                },
+                function () {
+                    $(this).css('background-color', '#3498db');
+                }
+            );
+        });
+    </script>
+
+</body>
+
+</html>
+
 
 
     <!-- Bootstrap JS and jQuery -->
