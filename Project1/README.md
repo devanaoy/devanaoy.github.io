@@ -12,7 +12,7 @@
 
 **Short-bio**: Omprakashreddy Devanampalli has keen interest in ethical hacking and secure software development. 
 
-![Omprakash's headshot](Project1/headshot.jpeg)
+![Omprakash's headshot](headshot.jpeg)
 
 ## Repository Information
 
