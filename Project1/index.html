@@ -14,9 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current Weather in Cincinnati</title>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Current Weather in Cincinnati</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -152,33 +149,6 @@
                         $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
                     })
                 </script>
-                <div>
-    <h2>Current Weather in Cincinnati</h2>
-    <p id="weather-info"></p>
-    <img id="weather-icon" alt="Weather Icon">
-    <button onclick="getWeather()">Get Weather</button>
-</div>
-
-<script>
-    function getWeather() {
-        // Replace 'YOUR_API_KEY' with your OpenWeatherMap API key
-        var apiKey = 'YOUR_API_KEY';
-        
-        // Fetch data from OpenWeatherMap API
-        $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=Cincinnati&appid=" + apiKey, function (data) {
-            // Extract relevant weather information
-            var temperature = data.main.temp - 273.15; // Convert temperature to Celsius
-            var description = data.weather[0].description;
-            var iconCode = data.weather[0].icon;
-
-            // Update weather information
-            $("#weather-info").text("Current Temperature: " + temperature.toFixed(2) + "°C, Weather: " + description);
-
-            // Update weather icon
-            $("#weather-icon").attr("src", "http://openweathermap.org/img/w/" + iconCode + ".png");
-        });
-    }
-</script>
      </div>
         </div>
 
