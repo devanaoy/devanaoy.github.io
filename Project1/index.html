@@ -79,25 +79,6 @@
                 <p>Phone: (513) 259-5878</p>
                 <a href="https://devanaoy.github.io/Project1/waph.html">Click here to view waph.html</a>
                 <p id="email" onclick="showhideEmail()">Show my email</p>
-     <script>
-        var shown = false;
-
-        function showhideEmail() {
-            if (shown) {
-                document.getElementById("email").innerHTML = "Show my email";
-                shown = false;
-            } else {
-                var myemail =
-                    "<a href='mailto:devanaoy" +
-                    "@" +
-                    "ucmail.uc.edu'>devanaoy" +
-                    "@" +
-                    "ucmail.uc.edu</a>";
-                document.getElementById("email").innerHTML = myemail;
-                shown = true;
-            }
-        }
-    </script>
             </div>
         </div>
 
@@ -175,6 +156,25 @@
         document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
     }
     setInterval(displayTime, 500);
+    </script>
+    <script>
+        var shown = false;
+
+        function showhideEmail() {
+            if (shown) {
+                document.getElementById("email").innerHTML = "Show my email";
+                shown = false;
+            } else {
+                var myemail =
+                    "<a href='mailto:devanaoy" +
+                    "@" +
+                    "ucmail.uc.edu'>devanaoy" +
+                    "@" +
+                    "ucmail.uc.edu</a>";
+                document.getElementById("email").innerHTML = myemail;
+                shown = true;
+            }
+        }
     </script>
 
 
