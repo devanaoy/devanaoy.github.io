@@ -4,7 +4,7 @@
 
 **Name**: Divya Sheelam
 
-**Email**: sheelada@mail.uc.edu
+**Email**: devanaoy@mail.uc.edu
 
 **Short-bio**: Divya pursuing masters in Information Technology at University of Cincinnati. Divya is interested in software development and machine learning.  
 
