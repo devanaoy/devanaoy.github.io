@@ -26,7 +26,7 @@ This is a private repository for Omprakashreddy Devanampalli to store all code f
 
 For my Individual Project 1, I crafted a professional website hosted on GitHub Pages, serving as a dynamic portfolio showcasing my resume, skills, and experiences. This project aimed to elevate my proficiency in front-end web development, and it involved implementing various technical features like integrating a joke API, digital clock, analog clock, displaying email, weather API, and a Flag counter. The deployment on GitHub Pages provided practical insights into the process of making web content publicly accessible.
 
-The link to access my website is: [https://devanaoy.github.io/Project1/index.html](https://devanaoy.github.io/Project1/index.html).
+The link to access my website is: [https://devanaoy.github.io/Project1/index.html](https://devanaoy.github.io/Project1/index.html)
 
 The link to access Individual Project-1 is: [https://github.com/devanaoy/devanaoy.github.io](https://github.com/devanaoy/devanaoy.github.io)
 
