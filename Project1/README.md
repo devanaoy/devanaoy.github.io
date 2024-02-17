@@ -28,7 +28,7 @@ For my Individual Project 1, I crafted a professional website hosted on GitHub P
 
 The link to access my website is: [https://devanaoy.github.io/Project1/index.html](https://devanaoy.github.io/Project1/index.html).
 
-The link to access Individual Project-1 is: [https://github.com/sheelada/devanaoy.github.io](https://github.com/devanaoy/devanaoy.github.io)
+The link to access Individual Project-1 is: [https://github.com/devanaoy/devanaoy.github.io](https://github.com/devanaoy/devanaoy.github.io)
 
 ## General Requirements
 
