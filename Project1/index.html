@@ -201,10 +201,10 @@
     </div>
    <script>
 $(document).ready(function () {
-    const apiKey = '';
+    const apiKey = 'c1d2b08a2c144aaea279ebd103d352f5';
     const targetCity = 'Cincinnati';
     const targetCountry = 'US';
-    const weatherUrl = https://api.weatherbit.io/v2.0/current?&key=${c1d2b08a2c144aaea279ebd103d352f5}&city=${targetCity}&country=${targetCountry};
+    const weatherUrl = https://api.weatherbit.io/v2.0/current?&key=${apiKey}&city=${targetCity}&country=${targetCountry};
 
     $.get(weatherUrl, function (response) {
         const currentTemp = response.data[0].temp;
