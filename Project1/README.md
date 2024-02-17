@@ -37,19 +37,23 @@ The link to access Individual Project-1 is: [https://github.com/sheelada/devanao
 I established a fresh public repository titled `devanaoy.github.io` and designed a personal website using GitHub Pages. The website encompasses details about my resume, contact information, education, experiences, projects, certifications, and skills.
 The link to access my website is: [https://devanaoy.github.io/Project1/index.html](https://devanaoy.github.io/Project1/index.html).
 
-![Portfolio Website](images/screenshot1.png)
+![Portfolio Website](img1.png)
+![Portfolio Website](img2.png)
+![Portfolio Website](img3.png
+![Portfolio Website](img4.png)
 
 ### "Web Application Programming and Hacking" course and related hands-on projects on waph.html file
 
-I created the separate page with the name waph.html on my repository introducing the "Web Application Programming and Hacking" course and its related hands-on projects. In this I includes overviews of Lab0, Lab1, Lab2, Hackathon 1 and Individual Project 1. 
+I generated a dedicated page named "waph.html" within my repository, providing an introduction to the "Web Application Programming and Hacking" course and its associated practical projects. The page includes summaries of Lab0, Lab1, Lab2, Hackathon 1, and Individual Project 1, presenting the key aspects of each in unique terms.
 
-The link to access waph.html is: [https://sheelada.github.io/waph.html](https://sheelada.github.io/waph.html).
+The link to access waph.html is: [https://devanaoy.github.io/Project1/waph.html](https://devanaoy.github.io/Project1/waph.html).
 
 This page link is accessible from the personal website as shown in below screenshot:
 
-![waph.html page link on website](images/screenshot2.png)
+![waph.html page link on website](img5.png)
 
-![waph.html page](images/screenshot3.png)
+![waph.html page](img6.png)
+![waph.html page](img7.png)
 
 ## Non-technical requirements
 
@@ -63,7 +67,7 @@ I changed the template as per my requirements and tasks given by the professor
 
 I Integrated Flag Counter as a page tracker to monitor website visits and engagement. 
 
-From the two given websites. I have chosen `https://flagcounter.com/`. I generated a key from the website and integrated it in my code. Flag counter is visible in my website homepage as integrated.
+I opted for the website `https://flagcounter.com/` among the two provided options. I acquired a key from the site and incorporated it into my code. The flag counter is now displayed on the homepage of my website through integration.
 
 Code for integrating Flag Counter:
 
@@ -75,7 +79,7 @@ Code for integrating Flag Counter:
 </div>
 ```
 
-![Flag Counter](images/screenshot4.png)
+![Flag Counter](img8.png)
 
 
 
@@ -87,45 +91,68 @@ Same as lab 2, Implemented a digital clock and an analog clock using JavaScript 
 
 Source Code for digital clock:
 ```JS
-function displayTime() {
-          document.getElementById('digital-clock').innerHTML = "current time:" + new Date();
-        }
-        setInterval(displayTime, 500);
+<div id="digit-clock"></div>
+    <script>
+    function displayTime() {
+        document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+    }
+    setInterval(displayTime, 500);
+    </script>
 ```
 
 Source Code for Analog clock:
 ```JS
-var canvas = document.getElementById("analog-clock");
-        var ctx = canvas.getContext("2d");
-        var radius = canvas.height / 2;
-        ctx.translate(radius, radius);
-        radius = radius * 0.90
-        setInterval(drawClock, 1000);
+</div>
+    <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+    <script src="https://waph-uc.github.io/clock.js"></script>
+    <script>
+        var canvas = document.getElementById("analog-clock");
 
+        var ctx = canvas.getContext("2d");
+
+        var radius = canvas.height / 2;
+
+        ctx.translate(radius, radius);
+        radius = radius * 0.9;
+
+        setInterval(drawClock, 1000);
         function drawClock() {
-          drawFace(ctx, radius);
-          drawNumbers(ctx, radius);
-          drawTime(ctx, radius);
+            drawFace(ctx, radius);
+
+            drawNumbers(ctx, radius);
+
+            drawTime(ctx, radius);
         }
+            </script>
 ```
+![Digital clock, Analog Clock](img9.png)
 
 Source Code for show/hide your email:
 
 ```JS
-function showhideEmail() {
-      if (shown) {
-        document.getElementById('email').innerHTML = "Click here to show my email";
-        shown = false;
-      }
-      else {
-        var myemail = "<a href='mailto:sheelada" + "@" + "mail.uc.edu'>sheelada" + "@" + "mail.uc.edu</a>";
-        document.getElementById('email').innerHTML = myemail;
-        shown = true;
+<p id="email" onclick="showhideEmail()">Show my email</p>
+     <script>
+        var shown = false;
+
+        function showhideEmail() {
+            if (shown) {
+                document.getElementById("email").innerHTML = "Show my email";
+                shown = false;
+            } else {
+                var myemail =
+                    "<a href='mailto:devanaoy" +
+                    "@" +
+                    "ucmail.uc.edu'>devanaoy" +
+                    "@" +
+                    "ucmail.uc.edu</a>";
+                document.getElementById("email").innerHTML = myemail;
+                shown = true;
+            }
+        }
+    </script>
 ```
 
-Screenshot Showing Digital clock, Analog Clock, Show/hide your email:
-
-![Digital clock, Analog Clock, Show/hide your email](images/screenshot5.png)
+![Show/hide your email](img10.png)
 
 
 ### One more Functionality of my choice
@@ -176,20 +203,15 @@ Integrated the jokeAPI to fetch a new joke every minute and display it on the we
 Source code for Joke API:
 
 ```JS
-function fetchJoke() {
-          $.get("https://v2.jokeapi.dev/joke/Any?type=single", function (result) {
-            console.log("From jokeAPI: " + JSON.stringify(result));
-            if (result && result.joke) {
-              $("#joke").text("Here's a joke for you: " + result.joke);
-            } else {
-              $("#joke").text("Could not retrieve a joke at the moment.");
-            }
-          });
-        }
-
-fetchJoke();
-setInterval(fetchJoke, 60000);
+<div id="response"></div>
+        <script>
+                    $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
+                        console.log("From jokeAPI: " + JSON.stringify(result));
+                        $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
+                    })
+                </script>
 ```
+![Joker API](img12.png)
 
 ### Weather API
 
@@ -223,48 +245,74 @@ $.getJSON("https://api.weatherbit.io/v2.0/current?city=cincinnati&key=08d6dd69ba
 Implemented JavaScript cookies to remember the client's visit and display personalized messages based on whether they are a first-time visitor or returning user. For first time visit it shows "Welcome to my homepage!", for returning user it displays "Welcome back! Your last visit was (last visit time and date)".
 
 ```JS
-// Function to set or retrieve the value of a cookie
-function setCookie(name, value, days) {
-var expires = "";
-if (days) {
-  var date = new Date();
-  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-  expires = "; expires=" + date.toUTCString();
-}
-document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
+<script>
+    // Function to check if it's the first-time visit
+    function checkFirstVisit() {
+      // Check if "firstVisit" key exists in localStorage
+      if (!localStorage.getItem("firstVisit")) {
+        // Display welcome message for the first-time visit
+        alert("Welcome to my homepage!");
+        // Set the "firstVisit" key in localStorage to remember the visit
+        localStorage.setItem("firstVisit", true);
+      }
+    }
 
-function getCookie(name) {
-var nameEQ = name + "=";
-var ca = document.cookie.split(';');
-for (var i = 0; i < ca.length; i++) {
-  var c = ca[i];
-  while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-  if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-}
-return null;
-}
-
-// Function to display the welcome message
-function displayWelcomeMessage() {
-var lastVisit = getCookie("lastVisit");
-if (!lastVisit) {
-  // First-time visit
-  setCookie("lastVisit", new Date().toISOString(), 30); // Set cookie to expire in 30 days
-  alert("Welcome to my homepage!");
-} else {
-  // Returning visit
-  var lastVisitDate = new Date(lastVisit);
-  alert("Welcome back! Your last visit was " + lastVisitDate.toLocaleString());
-}
-}
-
-// Call the function when the page loads
-window.onload = displayWelcomeMessage;
+    // Call the function to check for the first-time visit
+    checkFirstVisit();
+  </script>
 
 ```
-![Fisrt visit](images/screenshot8.png)
-![revisit cookies](images/screenshot9.png)
+![Fisrt visit](img13.png)
+
+```JS
+<script>
+    // Function to set a cookie with a specified name, value, and expiration days
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    // Function to get the value of a cookie by name
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+
+    // Function to check if it's the first-time visit
+    function checkFirstVisit() {
+      var isFirstVisit = getCookie("firstVisit");
+      if (!isFirstVisit) {
+        // Display welcome message for the first-time visit
+        alert("Welcome to my homepage!");
+        // Set the cookie to remember the visit for 365 days
+        setCookie("firstVisit", "true", 365);
+      } else {
+        // Display welcome back message for returning visitors
+        var lastVisit = getCookie("lastVisit");
+        alert("Welcome back! Your last visit was " + lastVisit);
+      }
+      // Set the cookie for the current visit
+      setCookie("lastVisit", new Date(), 365);
+    }
+
+    // Call the function to check for the first-time visit
+    checkFirstVisit();
+  </script>
+```
+
+
+![revisit cookies](img14.png)
 
 
 
