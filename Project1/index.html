@@ -149,6 +149,21 @@
                         $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
                     })
                 </script>
+                <script>
+$(document).ready(function () {
+    const apiKey = 'c1d2b08a2c144aaea279ebd103d352f5';
+    const targetCity = 'Cincinnati';
+    const targetCountry = 'US';
+    const weatherUrl = https://api.weatherbit.io/v2.0/current?&key=${apiKey}&city=${targetCity}&country=${targetCountry};
+
+    $.get(weatherUrl, function (response) {
+        const currentTemp = response.data[0].temp;
+        const condition = response.data[0].weather.description;
+        const displayInfo = Current temperature and weather condition in ${targetCity}: ${currentTemp}°C, ${condition};
+        $('#weather').html(displayInfo);
+    });
+});
+</script>
      </div>
         </div>
 
@@ -199,21 +214,6 @@
         alt="Flag Counter" border="0"></a>
         </div>
     </div>
-   <script>
-$(document).ready(function () {
-    const apiKey = 'c1d2b08a2c144aaea279ebd103d352f5';
-    const targetCity = 'Cincinnati';
-    const targetCountry = 'US';
-    const weatherUrl = https://api.weatherbit.io/v2.0/current?&key=${apiKey}&city=${targetCity}&country=${targetCountry};
-
-    $.get(weatherUrl, function (response) {
-        const currentTemp = response.data[0].temp;
-        const condition = response.data[0].weather.description;
-        const displayInfo = Current temperature and weather condition in ${targetCity}: ${currentTemp}°C, ${condition};
-        $('#weather').html(displayInfo);
-    });
-});
-</script>
 <!-- </div>
 </div> -->
 <!--     <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
