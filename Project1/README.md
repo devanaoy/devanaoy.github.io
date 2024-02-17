@@ -87,7 +87,15 @@ Code for integrating Flag Counter:
 
 ### A digital clock; An analog clock; show/hide your email:
 
-Same as lab 2, Implemented a digital clock and an analog clock using JavaScript to display current time and also added functionality to show/hide the email address based on user interaction.
+This HTML and JavaScript code snippet provides several functionalities on a webpage. 
+
+The first section displays a digital clock by updating the content of a `<div>` element with the id "digit-clock" every 500 milliseconds. The time is retrieved using `new Date()`.
+
+The second section showcases an analog clock using the HTML5 `<canvas>` element. The clock is drawn by utilizing the provided external JavaScript file "clock.js." This script defines functions to draw the clock face, numbers, and time. The `setInterval` function ensures that the clock is updated every second.
+
+The third section involves a simple mechanism to show/hide an email address on the webpage. Initially, the paragraph with the id "email" displays "Show my email." Clicking on it toggles between displaying the email address "devanaoy@ucmail.uc.edu" as a hyperlink and reverting to the initial "Show my email" message.
+
+Together, these snippets enhance the webpage with a digital clock, analog clock, and a toggleable email address for user interaction.
 
 Source Code for digital clock:
 ```JS
@@ -157,48 +165,37 @@ Source Code for show/hide your email:
 
 ### One more Functionality of my choice
 
-I have integrated Hacker News Api using `VUE.JS` Framework. This Api displays 5 HACKER NEWS TRENDING ARTICLES. 
+The provided code snippet demonstrates a simple interactive button implemented using jQuery. Upon clicking the button with the id "interactive-button," an alert message saying 'Button clicked!' will be triggered. Additionally, the button changes its background color dynamically when hovered over, utilizing the jQuery `hover` function. The background color transforms to a darker shade (#2980b9) during hover and returns to its original color (#3498db) when the cursor moves away. This combination of click functionality and hover effect enhances the user experience by adding responsiveness to the button interaction.
 
-Source code for Haacker news Api:
-```JS
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-```
+![Button Click](img11.png)
+
+Source code for Button Click:
+
  ```JS
-new Vue({
-el: '#app',
-data: {
-  articles: []
-},
-mounted() {
-  this.fetchArticles();
-},
-methods: {
-  fetchArticles() {
-    fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
-      .then(response => response.json())
-      .then(ids => {
-        // Take only the first 10 article IDs
-        ids = ids.slice(0, 5);
-        // Fetch details of each article
-        Promise.all(ids.map(id =>
-          fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-            .then(response => response.json())
-        ))
-          .then(articles => {
-            // Update articles data
-            this.articles = articles;
-          });
-      })
-      .catch(error => console.error('Error fetching articles:', error));
-  }
-}
-});
+<button id="interactive-button">Click Me</button>
+
+    <script>
+        $(document).ready(function () {
+            $('#interactive-button').click(function () {
+                alert('Button clicked!');
+            });
+
+            // Change button color on hover
+            $('#interactive-button').hover(
+                function () {
+                    $(this).css('background-color', '#2980b9');
+                },
+                function () {
+                    $(this).css('background-color', '#3498db');
+                }
+            );
+        });
+    </script>
  ```
-![5 Hacker news trending articles](images/screenshot6.png)
 
 ### Joke API
 
-Integrated the jokeAPI to fetch a new joke every minute and display it on the website.
+This HTML and JavaScript code fetches a programming joke from the JokeAPI by making a GET request to the specified URL. The jQuery `$.get` method is employed to retrieve data asynchronously. Once the joke data is received, the provided callback function processes the result. The obtained joke is then logged to the console and displayed on the webpage within the specified `<div>` element with the id "response". The `encodeInput` function is presumed to encode the joke text before displaying it to handle any special characters appropriately. This script allows for the dynamic incorporation of a programming joke into the webpage content, providing an element of humor for the user.
 
 Source code for Joke API:
 
@@ -216,6 +213,8 @@ Source code for Joke API:
 ### Weather API
 
 Integrated the Weatherbit API to fetch current weather information for Cincinnati and display it on the website.
+
+This JavaScript code utilizes the jQuery library to retrieve real-time weather data from the Weatherbit API for Cincinnati. Upon successfully fetching the data, it extracts relevant information such as temperature, weather description, and icon code. Subsequently, it dynamically updates designated HTML elements on the webpage, specifically the "weather-info" element for displaying the current temperature and weather description, and the "weather-icon" element for showcasing the corresponding weather icon. The code is structured to provide an interactive and up-to-date representation of the weather conditions, enhancing the user experience on the webpage.
 
 ```JS
 
@@ -238,11 +237,9 @@ $.getJSON("https://api.weatherbit.io/v2.0/current?city=cincinnati&key=08d6dd69ba
 
 ```
 
-![Joke API and weather API](images/screenshot7.png)
-
 ### Javascript Cookies
 
-Implemented JavaScript cookies to remember the client's visit and display personalized messages based on whether they are a first-time visitor or returning user. For first time visit it shows "Welcome to my homepage!", for returning user it displays "Welcome back! Your last visit was (last visit time and date)".
+This JavaScript code employs the localStorage feature to determine if a user is visiting a website for the first time. The `checkFirstVisit` function checks whether the "firstVisit" key exists in the localStorage. If it doesn't, indicating a first-time visit, an alert message "Welcome to my homepage!" is displayed, and the "firstVisit" key is set in localStorage to remember the visit. This mechanism enables the website to provide a personalized welcome message for first-time visitors without relying on server-side technologies. The script is executed when the page loads, ensuring the welcome message is displayed only during the user's initial visit.
 
 ```JS
 <script>
@@ -263,6 +260,8 @@ Implemented JavaScript cookies to remember the client's visit and display person
 
 ```
 ![Fisrt visit](img13.png)
+
+This JavaScript code utilizes cookies to enhance user experience by providing personalized messages based on their visit history. The `setCookie` function is responsible for setting a cookie with a specified name, value, and expiration period in days. The `getCookie` function retrieves the value of a cookie by its name. The `checkFirstVisit` function checks whether the "firstVisit" cookie exists. If not, it displays a welcome message for first-time visitors, sets the "firstVisit" cookie to remember the visit for 365 days, and sets the "lastVisit" cookie for the current visit. For returning visitors, it displays a welcome back message along with the information about their last visit, retrieved from the "lastVisit" cookie. The script is executed on page load to provide a tailored greeting based on the user's visit history.
 
 ```JS
 <script>
