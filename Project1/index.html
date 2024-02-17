@@ -149,7 +149,8 @@
                         $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
                     })
                 </script>
-                <script>
+                
+<script>
 $(document).ready(function () {
     const apiKey = 'c1d2b08a2c144aaea279ebd103d352f5';
     const targetCity = 'Cincinnati';
@@ -159,9 +160,9 @@ $(document).ready(function () {
     $.get(weatherUrl, function (response) {
         const currentTemp = response.data[0].temp;
         const condition = response.data[0].weather.description;
-        const displayInfo = Current temperature and weather condition in ${targetCity}: ${currentTemp}°C, ${condition};
+        const displayInfo = 'Current temperature and weather condition in ${targetCity}: ${currentTemp}°C, ${condition}'
         $('#weather').html(displayInfo);
-    });
+    });
 });
 </script>
      </div>
