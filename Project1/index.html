@@ -324,42 +324,46 @@
     checkFirstVisit();
   </script>
     <div class="weather">
-    <p id="weather-details"></p>
+<p>weather details</p>
+<div id="weather-info">
+<!-- Weather icon will be displayed here -->
+<img id="weather-icon" src="" alt="Weather Icon">
+<div id="weather-details"></div>
 </div>
 <script>
-    $(document).ready(function () {
-        var apiKey = 'c1d2b08a2c144aaea279ebd103d352f5'; // Replace 'YOUR_API_KEY' with your actual API key from Weatherbit
-        var city = 'Cincinnati'; // Example city, you can change it to any city you want
-
-        // Make a GET request to Weatherbit API for current weather data
-        $.ajax({
-            url: "https://api.weatherbit.io/v2.0/current",
-            method: "GET",
-            data: {
-                key: apiKey,
-                city: city
-            },
-            success: function (data) {
-                // Check if the request was successful and data is available
-                if (data && data.data && data.data.length > 0) {
-                    var weatherData = data.data[0];
-                    var temperature = weatherData.temp;
-                    var description = weatherData.weather.description;
-
-                    // Display weather information on the webpage
-                    $("#weather-details").html("<p>Temperature: " + temperature + "°C</p>" +
-                        "<p>Description: " + description + "</p>");
-                } else {
-                    $("#weather-details").html("<p>Unable to fetch weather data.</p>");
-                }
-            },
-            error: function () {
-                $("#weather-details").html("<p>Error occurred while fetching weather data.</p>");
-            }
-        });
-    });
+$(document).ready(function () {
+var apiKey = 'c1d2b08a2c144aaea279ebd103d352f5'; // Replace 'YOUR_API_KEY' with your actual API key from Weatherbit
+ 
+// Make a GET request to Weatherbit API for current weather data
+$.get("https://api.weatherbit.io/v2.0/current", {
+key: apiKey,
+city: 'Cincinnati' // Example city, you can change it to any city you want
+})
+.done(function (data) {
+// Check if the request was successful and data is available
+if (data && data.data && data.data.length > 0) {
+var weatherData = data.data[0];
+var temperature = weatherData.temp;
+var description = weatherData.weather.description;
+var iconCode = weatherData.weather.icon;
+ 
+// Construct the URL for the weather icon
+var iconUrl = "https://www.weatherbit.io/static/img/icons/" + iconCode + ".png";
+ 
+// Display weather information on the webpage
+$("#weather-icon").attr("src", iconUrl);
+$("#weather-details").html("<p>Temperature: " + temperature + "°C</p>" +
+"<p>Description: " + description + "</p>");
+} else {
+$("#weather-info").html("<p>Unable to fetch weather data.</p>");
+}
+})
+.fail(function () {
+$("#weather-info").html("<p>Error occurred while fetching weather data.</p>");
+});
+});
 </script>
-
+</div>
 </div>
 </body>
 
